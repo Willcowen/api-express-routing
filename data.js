@@ -45,7 +45,27 @@ const films = [
     id: 4,
     title: "Django Unchained",
     director: "Quentin Tarantino"
-  }
+  },
+  {
+    id: 5,
+    title: "Kill Bill",
+    director: "Quentin Tarantino"
+  },
+  {
+    id: 6,
+    title: "Trasnformers",
+    director: "Micheal Bay"
+  },
+  {
+    id: 7,
+    title: "Schindler's List",
+    director: "Steven Spielberg"
+  },
+  {
+    id: 8,
+    title: "Get Out",
+    director: "Jordan Peele"
+  },
 ];
 
 const users = [

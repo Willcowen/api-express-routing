@@ -40,14 +40,18 @@ app.post("/users", (req, res) => {
 // Films
 
 app.get("/films", (req, res) => { 
-  if(!req.query.director) {
-  res.json({ films: data.films });
+  if(req.query.limit && req.query.from) {
+    const from = parseInt(req.query.from-1)
+    const limit = parseInt(from + Number(req.query.limit) + 1)
+    const films = data.films.slice(from, limit)
+    res.json({films: films})
   }
-  else {
+  else if (req.query.director) {
     const filmDirector = req.query.director
     const filteredFilms = data.films.filter(film => film.director === filmDirector)
     res.json({films: filteredFilms})
-  }
+  } 
+    res.json({ films: data.films });
 });
 
 
